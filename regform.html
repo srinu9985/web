@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+    <style>
+        #maindiv{
+			background-image: linear-gradient(white,grey,white);
+			height:700px;
+            }
+		p{
+			border:3px solid whitesmoke;
+			width:60px;
+			margin:10px;
+			padding:5px;
+			position:absolute;
+			top:5%;
+			background:white;
+			border-radius:10px;
+		}
+        .form{
+           background: whitesmoke;
+           width:600px;
+           border:3px solid black;
+           padding:10px;
+           top:70px;
+           position:absolute;
+           left:380px;
+           box-shadow:5px 10px 30px blue,5px 10px 30px red,5px 10px 50px skyblue;
+           border-radius:25px;
+
+        }
+        table{
+            position:relative;
+            left:80px;
+        }
+        .h1{
+         position:absolute;
+         top:0px;
+         left:490px;
+         color: red;
+         text-shadow : 3px 3px red;
+        }
+        .a{
+            color: darkslateblue;
+            font-weight:bold;
+            font-style: italic;
+            }
+         .a1{
+            color:green;
+            font-weight:bold;
+         }
+         .b{
+            border:2px solid grey;
+         }
+
+    </style>
+</head>
+<body>
+<div id="maindiv">
+<p id="demo" style="color:red;"></p>
+<script>
+var a = setInterval(myTimer, 1000);
+
+function myTimer() {
+  const date = new Date();
+  document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+}
+
+</script>
+
+<script>
+    function main(){
+    var f=document.getElementById("fname").value;
+    var l=document.getElementById("lname").value;
+    var p=document.getElementById("phno").value;
+    var m=document.getElementById("mail").value;
+    var ps=document.getElementById("pswd").value;
+    var cp=document.getElementById("cpswd").value;
+    var d=document.getElementById("date").value;
+    var i=document.getElementById("image").value;
+    var h1=document.getElementById("read").checked;
+    var h2=document.getElementById("eat").checked;
+    var h3=document.getElementById("cook").checked;
+    var h4=document.getElementById("play").checked;
+    var a=document.getElementById("agree").checked;
+	
+	
+    var p1= /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    var p2=/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
+    var p3=/^[a-zA-Z]{3,16}$/
+    var p4=/^[a-zA-Z]{3,16}$/
+    var p5=/^[0-9]{10}$/
+	
+    if(!p3.test(f)){
+        document.getElementById("name1").style.visibility="visible";
+        
+		setInterval(error1,4000);
+		return false;
+    }
+
+    else if(!p4.test(l)){
+        document.getElementById("name2").style.visibility="visible";
+		setInterval(error2,4000);
+        return false;
+    }
+
+    if(!p5.test(p)){
+        document.getElementById("ph").style.visibility="visible";
+		setInterval(error3,4000);
+        return false;
+    }
+    else if(!ps.match(cp)){
+        document.getElementById("cpswd1").style.visibility="visible";
+		setInterval(error4,4000);
+        return false;
+    }
+    else if(!p2.test(m)){
+        document.getElementById("mail1").style.visibility="visible";
+		setInterval(error5,4000);
+        return false;
+    }
+
+    else if(!p1.test(ps)){
+        document.getElementById("pswd1").style.visibility="visible";
+		setInterval(error6,4000);
+        return false;
+    }
+    else if(!(h1||h2||h3||h4)){
+        document.getElementById("hobbies").style.visibility="visible";
+		setInterval(error7,4000);
+        return false;
+    }
+    else if(!(a)){
+        document.getElementById("agree1").style.visibility="visible";
+		setInterval(error8,4000);
+        return false;
+    }
+
+
+    }
+	
+	function error1(){
+	document.getElementById("name1").style.visibility="hidden";
+	}
+	function error2(){
+	document.getElementById("name2").style.visibility="hidden";
+	}
+	function error3(){
+	document.getElementById("ph").style.visibility="hidden";
+	}
+	function error4(){
+	document.getElementById("cpswd1").style.visibility="hidden";
+	}
+	function error5(){
+	document.getElementById("mail1").style.visibility="hidden";
+	}
+	function error6(){
+	document.getElementById("pswd1").style.visibility="hidden";
+	}
+	function error7(){
+	document.getElementById("hobbies").style.visibility="hidden";
+	}
+	function error8(){
+	document.getElementById("agree1").style.visibility="hidden";
+	}
+</script>
+
+    <h1 class="h1">STUDENT REGISTRATION</h1>
+<form class="form" action="main.php" onsubmit="return main()">
+    </br>
+    <table>
+
+
+        <tr>
+            <td><label for="fname" class="a" >FIRST NAME :</label></td>
+            <td><input type="text"  id="fname" class="b" placeholder="atlaest 3 char">
+                <span id="name1" style="visibility:hidden;color:red;" class="c" >invalid !!</span></br></br></td>
+        </tr>
+
+
+        <tr>
+    <td><label for="lname" class="a">LAST NAME :</label></td>
+    <td><input type="text" id="lname" class="b" placeholder="atleast 3 char">
+        <span id="name2" style="visibility:hidden;color:red;"  class="c">invalid !!</span></br></br></td>
+        </tr>
+		
+		<tr>
+    <td><label for="name" class="a">FULL NAME :</label></td>
+    <td><input type="text" id="name" class="b" ><input type="checkbox" id="c1" onclick="myfn();">
+        <span id="name3" style="visibility:hidden;color:red;"  class="c">invalid !!</span></br></br></td>
+        </tr>
+
+        <tr>
+    <td><label for="phno" class="a">PHONE NO :</label></td>
+    <td><input type="number" id="phno" class="b" placeholder="exactly 10 numbers">
+        <span id="ph" style="visibility:hidden;color:red;"  class="c">invalid !!</span></br></br></td>
+        </tr>
+
+        <tr>
+   <td> <label for="mail" class="a">MAIL :</label></td>
+    <td><input type="mail" id="mail" class="b" placeholder="enter mail">
+        <span id="mail1" style="visibility:hidden;color:red;"  class="c">invalid !!</span></br></br></td>
+    </tr>
+
+
+        <tr>
+    <td><label for="pswd" class="a">PASSWORD :</label></td>
+    <td><input type="password" id="pswd" class="b" placeholder="atleast 6 letters">
+        <span id="pswd1" style="visibility:hidden;color:red;" class="c">invalid !!</span></br></br></td>
+        </tr>
+
+
+        <tr>
+    <td><label for="cpswd" class="a"> CONFIRM PASSWORD :</label></td>
+    <td><input type="password" id="cpswd" class="b" placeholder="enter same password">
+        <span id="cpswd1" style="visibility:hidden;color:red;" class="c" >enter correct pswd !!</span></br></br></td>
+        </tr>
+
+
+        <tr>
+    <td><label for="date" class="a">DOB :</label></td>
+    <td><input type="date" id="date" class="b"></br></br></td>
+        </tr>
+        <tr>
+    <td><label for="image" class="a">IMAGE :</label></td>
+    <td><input type="file" id="image" class="b1"></br></br></td>
+        </tr>
+
+        <tr>
+            <td class="a">HOBBIES : </td><td><span id="hobbies" style="visibility:hidden;color:red;" class="c">select atleast one hobby !!</span></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr class="new">
+    <td colspan="2">
+        <label for="read" class="a1"><hr width="100%" color="white">READING</label>
+        <input type="checkbox"  id="read" class="b">
+
+    <label for="eat" class="a1">&nbsp EATING</label>
+       <input type="checkbox" id="eat" class="b">
+
+        <label for="cook" class="a1">&nbsp COOKING</label>
+       <input type="checkbox" id="cook" class="b">
+
+    <label for="play" class="a1">&nbsp PLAYING</label>
+        <input type="checkbox" id="play" class="b"><hr width="100%" color="white">
+        </br></td>
+        </tr>
+    <tr>
+    </tr>
+        <td colspan="2">
+        <input type="checkbox" id="agree">
+            <label for="play" ><b>I accept all terms and conditions</b></label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <span id="agree1" style="visibility:hidden;color:red;" class="c">select the agree box !!</span>
+        </br></td>
+        <tr>
+            <td></td><td><input type="submit" class="b" style="background:white;color:black;font-weight:bold; font-size:18px;">
+            </center></br></br></td>
+        </tr>
+    </table>
+</form>
+<script>
+	function myfn(){
+	document.getElementById("name").value = document.getElementById("fname").value +" "+ document.getElementById("lname").value;
+	}
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> wt project</title>
+        <link rel="stylesheet" href="srinu.css"
+    </head>
+    <body>
+        <div class="name">
+            <img src="tiger.jpg " class="im">
+            <img src="menubar.png" class="im" id="mb" style="float:right;" onclick="menu();">
+            <h1>Srinivas </h1>
+
+        </div>
+        <div class="nav" id="hnav" style="background-color: green; height: 50px;">
+        <ul>
+            <li><a href="project.html" class="active">Home</a></li>
+            <li><a href="regform.html">Exam</a></li>
+            <li><a href="#">Branch</a>
+            <ul>
+                 <li><a href="#">MECH</a>
+                </li>
+                 <li><a href="#">ECE</a></li>
+                <li><a href="#" onmouseover="cse();" onmouseleave="cse1();">CSE</a>
+                    <ul style="display:none;margin-top: 10px;margin-left: 30px;" id="ramu">
+                        <li><a href='studentlf.html'>Student</a></li>
+                        <li><a href='facultylf.html'>Faculty</a></li>
+                    </ul>
+                </li>
+            </ul>
+                
+            </li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        </div>
+        <div class="left">
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search id" 
+            title="Type in a category">
+            <ul id="myMenu">
+            <li><a href="#">N180083</a></li>
+            <li><a href="#">N180084</a></li>
+            <li><a href="#">N180085</a></li>
+            <li><a href="#">N181086</a></li>
+            <li><a href="#">N180087</a></li>
+            <li><a href="#">N180088</a></li>
+            <li><a href="#">N182089</a></li>
+            <i><a href="#">N180033</a></li>
+            <li><a href="#">N184034</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <h1 style="text-align: center;background-color: red;">Notifications</h1><br><br>
+            <marquee direction="up5" style="align: center">
+            <p>Notification1</p><br><br>
+            <p>Notification1</p><br><br>
+            <p>Notification1</p><br><br>
+            <p>Notification1</p><br><br>
+        </marquee>
+        </div>
+        <div class="middle">
+            <iframe src="imageslidebar.html" class="is">
+                
+            </iframe>
+        </div>
+        <div class="vnav" id="vn">
+            <img src="wrong.png" id="w" style="width:40px;height:40px" onclick="wm()">
+            <ul>
+                <li><a href="project.html" class="active">Home</a></li>
+                <li><a href="regform.html">Exam</a></li>
+                <li><a href="#">Branch</a>
+                    <ul>
+                        <li><a href="#">MECH</a>
+                       </li>
+                        <li><a href="#">ECE</a></li>
+                       <li><a href="#" onmouseover="deva();" onmouseleave="deva1();">CSE</a>
+                           <ul  id="vara" style="display:none; position: relative;top: -20px;;margin-left: -95px;">
+                               <li><a href='studentlf.html'>Student</a></li>
+                               <li><a href='facultylf.html'>Faculty</a></li>
+                           </ul>
+                       </li>
+                   </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <footer>
+            <div class="footer">
+                <p>@copy rights goes to srinivas</p>
+            </div>
+        </footer>
+
+        <script>
+            function menu(){
+                document.getElementById("vn").style.display="block";
+                document.getElementById("hnav").style.display="none";
+            }
+            function wm(){
+                document.getElementById("vn").style.display="none";
+                document.getElementById("hnav").style.display="block";
+            }
+            function myFunction(){
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("mySearch");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myMenu");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                    } else {
+                    li[i].style.display = "none";
+                    }
+                }
+            }
+            function cse(){
+                document.getElementById("ramu").style.display="block";
+            }
+            function cse1(){
+                document.getElementById("ramu").style.display="none";
+            }
+            function deva(){
+                document.getElementById("vara").style.display="block";
+            }
+            function deva1(){
+                document.getElementById("vara").style.display="none";
+            }
+        </script>
+    </body>
+    </html>

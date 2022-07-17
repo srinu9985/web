@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.name{
+    text-align: center;
+    background-color: aquamarine;
+    height: 50px;
+
+}
+.left{
+    float: left;
+    height: 500px;
+    width: 300px;
+    background-color: aqua;
+    border: 2px solid red;
+}
+.right{
+    float: right;
+    height: 500px;
+    width: 300px;
+    background-color: aqua;
+    border: 2px solid red;
+}
+.middle{
+    position: absolute;
+    height: 500px;
+    width: 56%;
+    border: 2px solid red;
+    margin-left: 300px;
+
+
+}
+  .nav ul{
+    position: absolute;
+    margin:10px;
+    padding:10px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    display: inline-flex;
+    margin: 50px;
+    list-style: none;
+    margin-left: 300px;
+}
+.nav ul li{
+    margin: -40px 50px;
+}
+
+.im{
+    border-radius: 50%;
+    margin-top: 0;
+    height:50px;
+    width: 50px;
+    float: left;
+}
+footer{
+    position: absolute;
+    top: 95%;
+    width: 100%;
+    height: 30px;
+
+}
+a.active,a:hover{
+    background: #1b9bff;
+    transition: .5s;
+}
+.vnav{
+    height:500px;
+    width: 20%;
+    background-color: #1b9bff;
+    /* margin-top: -50px; */
+    margin-left: 80%;
+    position: absolute;
+    display: none;
+}
+.vnav ul{
+    margin:10px;
+    padding:10px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    display: ;
+    margin: 50px;
+    font-size: 25px;
+    list-style: none;
+    margin-top: 10px;
+
+}
+.vnav ul li{
+    margin-top: 20px;
+
+}
+.vnav ul li a:hover{
+    background-color: rgb(202, 39, 39);
+}
+.is{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.nav ul ul{
+    display:inline-block;
+    position: absolute;
+    left:3%;
+    z-index: 3;
+    display: none;
+}
+.nav ul li:hover ul{
+    display:block;
+    height: 40px;
+}
+.nav ul ul li{
+    background-color: rgb(101, 28, 150);
+    margin-top: -10px;
+}
+.nav ul ul #cse:hover > #sm{
+    display: block;
+}
+.nav ul ul ul{
+    display: none;
+}
+.nav ul ul li:hover ul{
+    display: block;
+
+}
+.vnav ul ul{
+    display:block;
+    position: absolute;
+    top:180px;
+    left:-25%;
+    z-index: 3;
+    display: none;
+}
+.vnav ul li:hover ul{
+    display:block;
+    height: 40px;
+    ;
+}
+.vnav ul ul li{
+    background-color: rgb(101, 28, 150);
+    margin-top: -10px;
+    padding: 3px;
+}
+.vnav ul ul ul{
+    display: none;
+}
+.vnav ul ul ul:hover li{
+    display: block;
+
+}
